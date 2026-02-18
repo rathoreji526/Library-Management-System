@@ -53,17 +53,6 @@ public class StudentService {
                 .orElseThrow(()-> new RuntimeException("Student not found"));
         return student;
     }
-    // find by mobile
-    public Student findByMobile(String mobile){
-        Student student = studentRepository.findByMobile(mobile)
-                .orElseThrow(() -> new RuntimeException("Student not found"));
-        return student;
-    }
-
-    public List<Student> findByGender(Gender gender) {
-        List<Student> students = studentRepository.findByGender(gender);
-        return students;
-    }
 
     //update put
     public void updateStudentByPut(int id , StudentRequestDTO dto){

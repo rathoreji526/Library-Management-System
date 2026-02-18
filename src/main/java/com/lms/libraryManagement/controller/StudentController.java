@@ -36,24 +36,7 @@ public class StudentController {
             return new ResponseEntity<>(e.getMessage() , HttpStatus.NOT_FOUND);
         }
     }
-    @GetMapping("/findByMobile")
-    public ResponseEntity<?> findByMobile(@RequestParam String mobile){
-        try{
-            Student student = studentService.findByMobile(mobile);
-            return new ResponseEntity<>(student , HttpStatus.OK);
-        }catch (Exception e){
-            return new ResponseEntity<>(e.getMessage() , HttpStatus.NOT_FOUND);
-        }
-    }
-    @GetMapping("/findByGender")
-    public ResponseEntity<?> findByGender(@RequestParam Gender gender){
-        try{
-            List<Student> students = studentService.findByGender(gender);
-            return new ResponseEntity<>(students , HttpStatus.OK);
-        }catch (Exception e){
-            return new ResponseEntity<>(e.getMessage() , HttpStatus.NOT_FOUND);
-        }
-    }
+
     @PutMapping("/updateStudent")
     public ResponseEntity<?> updateStudent(@PathVariable int id,
                                         @RequestBody StudentRequestDTO studentDTO){

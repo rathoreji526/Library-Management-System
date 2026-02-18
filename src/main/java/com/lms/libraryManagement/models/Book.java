@@ -4,13 +4,13 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.time.Year;
 import java.util.List;
 
 @Data
 @Entity
 @Table(name = "book")
 public class Book {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
