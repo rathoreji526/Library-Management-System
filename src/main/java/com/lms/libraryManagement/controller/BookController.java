@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/book/apis")
+@RequestMapping("/book")
 public class BookController {
     @Autowired
     BookService bookService;

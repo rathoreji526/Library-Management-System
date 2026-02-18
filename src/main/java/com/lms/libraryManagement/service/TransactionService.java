@@ -33,7 +33,7 @@ public class TransactionService {
         //find the card
         Card card = cardService.findByStudentId(studentId);
 
-        Optional<Transaction> activeTransaction = transactionRepository.findByIsActiveAndCard_Id(true , card.getId());
+        Optional<Transaction> activeTransaction = transactionRepository.findByIsActiveIsTrueAndCard_Id( card.getId());
         if(activeTransaction.isPresent()){
             throw new RuntimeException("Student has already taken a book can't provide another book");
         }
@@ -67,7 +67,7 @@ public class TransactionService {
     public void returnBook(int studentId , int bookId){
 
         Card card = cardService.findByStudentId(studentId);
-        Optional<Transaction> activeTransaction = transactionRepository.findByIsActiveAndCard_Id(true , card.getId());
+        Optional<Transaction> activeTransaction = transactionRepository.findByIsActiveIsTrueAndCard_Id(card.getId());
 
         if(activeTransaction.isEmpty()){
             throw new RuntimeException("There is no any active transactions of this student.");

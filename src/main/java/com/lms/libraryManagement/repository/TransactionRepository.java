@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface TransactionRepository extends JpaRepository<Transaction, Integer> {
-    public Optional<Transaction> findByIsActiveAndCard_Id(boolean isActive , int cardId);
+    public Optional<Transaction> findByIsActiveIsTrueAndCard_Id(int cardId);
 }
